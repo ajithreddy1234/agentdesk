@@ -88,7 +88,9 @@ def seed_if_empty(url: str | None = None) -> None:
         with session_factory(url)() as s:
             if s.query(Customer).first():
                 print("database already has data; skipping seed")
-                Base.metadata.create_all(eng)  # add any new tables (e.g. after an upgrade)
+                from .db import init_db
+
+                init_db(url)  # add tables/columns introduced by upgrades
                 return
     seed(url)
 

@@ -133,4 +133,12 @@ def session_factory(url: str | None = None):
 
 
 def init_db(url: str | None = None):
-    Base.metadata.create_all(get_engine(url))
+    """Create missing tables and add columns introduced by upgrades (idempotent)."""
+    from sqlalchemy import inspect, text
+
+    eng = get_engine(url)
+    Base.metadata.create_all(eng)
+    cols = {c["name"] for c in inspect(eng).get_columns("approvals")}
+    if "quote_id" not in cols:
+        with eng.begin() as c:
+            c.execute(text("ALTER TABLE approvals ADD COLUMN quote_id VARCHAR(32)"))
