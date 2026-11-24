@@ -1,0 +1,23 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install torch --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt
+      - name: Unit + graph tests (scripted LLM, no key needed)
+        run: pytest -q
+      - name: Agent eval (120 scenarios) on every PR when the key is configured
+        if: ${{ env.OPENROUTER_API_KEY != '' }}
+        env: {EMBEDDING_BACKEND: hash}
+        run: |
+          python -m eval.run_eval --tag ci
+          python -c "import json,sys; r=json.load(open('eval/results/ci.json')); print(r['task_success']); sys.exit(0 if r['task_success']>=0.80 else 1)"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: eval-results, path: eval/results/, if-no-files-found: ignore}

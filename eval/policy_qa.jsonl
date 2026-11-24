@@ -1,0 +1,100 @@
+{"q": "How long do I have to report spoiled milk?", "doc": "01_returns_refunds", "ev": "must be reported within 24 hours of delivery", "kw": ["24 hours"]}
+{"q": "Do I need to physically return perishable items?", "doc": "01_returns_refunds", "ev": "Physical return of perishable items is not required", "kw": ["not required"]}
+{"q": "What is the return window for unopened packaged goods like rice or oil?", "doc": "01_returns_refunds", "ev": "can be returned within 7 days of delivery", "kw": ["7 days"]}
+{"q": "Can Final Sale items be returned?", "doc": "01_returns_refunds", "ev": "cannot be returned unless they arrive damaged or expired", "kw": ["damaged", "expired"]}
+{"q": "Is change of mind a valid reason for a return?", "doc": "01_returns_refunds", "ev": "Change of mind is accepted only for unopened non-perishable items", "kw": ["unopened", "non-perishable"]}
+{"q": "How quickly are refunds credited to the FreshCart Wallet?", "doc": "01_returns_refunds", "ev": "credited to the FreshCart Wallet within 2 hours", "kw": ["2 hours"]}
+{"q": "How long does a UPI refund take?", "doc": "01_returns_refunds", "ev": "Refunds to UPI are completed within 2 business days", "kw": ["2 business days"]}
+{"q": "How long does a refund to a credit card take?", "doc": "01_returns_refunds", "ev": "credit or debit cards within 5 to 7 business days", "kw": ["5 to 7"]}
+{"q": "How can cash on delivery orders be refunded?", "doc": "01_returns_refunds", "ev": "Cash on delivery orders can only be refunded to the FreshCart Wallet or a bank account", "kw": ["wallet", "bank account"]}
+{"q": "Up to what refund value are complaints approved automatically?", "doc": "01_returns_refunds", "ev": "up to Rs 500 per order are approved automatically", "kw": ["500"]}
+{"q": "What happens to a third complaint within 30 days?", "doc": "01_returns_refunds", "ev": "a third complaint within 30 days, are reviewed by the support team within 24 hours", "kw": ["reviewed", "24 hours"]}
+{"q": "Above what amount must a human agent approve a refund?", "doc": "01_returns_refunds", "ev": "A human agent must approve every refund above Rs 2,000", "kw": ["2,000"]}
+{"q": "If only some units are damaged, what gets refunded?", "doc": "01_returns_refunds", "ev": "refunds only those units at the price paid, including any discount applied", "kw": ["units", "price paid"]}
+{"q": "When are delivery fees refunded?", "doc": "01_returns_refunds", "ev": "Delivery fees are refunded only when the whole order is cancelled by FreshCart", "kw": ["whole order"]}
+{"q": "How many approved refund complaints in 60 days get an account flagged?", "doc": "01_returns_refunds", "ev": "more than 5 approved refund complaints in a 60-day period", "kw": ["5"]}
+{"q": "What is the customer support phone number for complaints?", "doc": "01_returns_refunds", "ev": "calling 1800-123-4567 between 6 AM and 10 PM", "kw": ["1800-123-4567"]}
+{"q": "Which version of the returns policy is this and when is it effective?", "doc": "01_returns_refunds", "ev": "Version 3.2, effective 1 April 2026", "kw": ["3.2"]}
+{"q": "Whose return policy applies to marketplace partner items?", "doc": "01_returns_refunds", "ev": "Items sold by marketplace partners follow the partner's own policy", "kw": ["partner"]}
+{"q": "Is a missing item eligible for a refund?", "doc": "01_returns_refunds", "ev": "A refund is also accepted when an item was missing from the delivery", "kw": ["missing"]}
+{"q": "Which cities does FreshCart deliver to?", "doc": "02_delivery", "ev": "FreshCart delivers in Hyderabad, Bengaluru, Mumbai, Delhi NCR, Chennai and Pune", "kw": ["Hyderabad", "Pune"]}
+{"q": "What are the morning slot delivery hours?", "doc": "02_delivery", "ev": "delivered between 5 AM and 7:30 AM", "kw": ["5 AM", "7:30"]}
+{"q": "By when must I place a morning slot order?", "doc": "02_delivery", "ev": "They must be placed before 10 PM on the previous day", "kw": ["10 PM"]}
+{"q": "How fast is express delivery?", "doc": "02_delivery", "ev": "arrives within 30 minutes in eligible pin codes", "kw": ["30 minutes"]}
+{"q": "What hours is express delivery available?", "doc": "02_delivery", "ev": "Express delivery is available from 8 AM to 9 PM", "kw": ["8 AM", "9 PM"]}
+{"q": "When do scheduled evening slots run?", "doc": "02_delivery", "ev": "Scheduled evening slots run from 5 PM to 8 PM", "kw": ["5 PM", "8 PM"]}
+{"q": "Is there a fee for morning slot delivery?", "doc": "02_delivery", "ev": "Morning slot delivery is free for all orders", "kw": ["free"]}
+{"q": "How much does express delivery cost for a small order?", "doc": "02_delivery", "ev": "Express delivery costs Rs 25 for orders below Rs 199", "kw": ["25"]}
+{"q": "Above what order value is express delivery free?", "doc": "02_delivery", "ev": "free for orders of Rs 199 or more", "kw": ["199"]}
+{"q": "What is the small-cart fee for evening orders?", "doc": "02_delivery", "ev": "A small-cart fee of Rs 15 applies to scheduled evening orders below Rs 99", "kw": ["15"]}
+{"q": "What compensation do I get if my morning delivery is late?", "doc": "02_delivery", "ev": "the customer receives a Rs 50 wallet credit automatically", "kw": ["50"]}
+{"q": "What happens if an express order is more than 15 minutes late?", "doc": "02_delivery", "ev": "If an express order arrives more than 15 minutes late, the delivery fee is refunded", "kw": ["delivery fee", "refunded"]}
+{"q": "How many late-delivery credits can I get per month?", "doc": "02_delivery", "ev": "at most 4 late-delivery credits per calendar month", "kw": ["4"]}
+{"q": "Will perishable items be left at my door if I'm not home?", "doc": "02_delivery", "ev": "left at the door only when the customer has enabled \"Leave at door\"", "kw": ["Leave at door"]}
+{"q": "Is a failed delivery caused by the customer refunded?", "doc": "02_delivery", "ev": "A failed delivery caused by the customer is not refunded for perishable items", "kw": ["not refunded"]}
+{"q": "Until when can I edit or cancel a morning order?", "doc": "02_delivery", "ev": "can be edited or cancelled until 11 PM the night before delivery", "kw": ["11 PM"]}
+{"q": "How long do I have to cancel an express order for free?", "doc": "02_delivery", "ev": "cancelled free of charge within 2 minutes of placing them", "kw": ["2 minutes"]}
+{"q": "What is the cancellation fee for express orders?", "doc": "02_delivery", "ev": "a cancellation fee of Rs 20 applies", "kw": ["20"]}
+{"q": "How long can Vacation Mode pause deliveries?", "doc": "02_delivery", "ev": "pause all deliveries for up to 30 days using Vacation Mode", "kw": ["30 days"]}
+{"q": "Do subscriptions restart after Vacation Mode ends?", "doc": "02_delivery", "ev": "Subscriptions resume automatically on the end date", "kw": ["automatically"]}
+{"q": "Do Plus members pay for express delivery?", "doc": "02_delivery", "ev": "FreshCart Plus members get free express delivery on every order", "kw": ["free"]}
+{"q": "How do I check if my pin code is serviceable?", "doc": "02_delivery", "ev": "check whether their pin code is serviceable on the app home screen", "kw": ["home screen"]}
+{"q": "What frequencies are available for subscriptions?", "doc": "03_subscriptions", "ev": "daily, alternate days, weekdays only, or a custom weekly pattern", "kw": ["alternate days", "weekdays"]}
+{"q": "How are subscriptions paid for?", "doc": "03_subscriptions", "ev": "Subscriptions are paid from the FreshCart Wallet", "kw": ["Wallet"]}
+{"q": "When must the wallet have enough balance for the next subscription delivery?", "doc": "03_subscriptions", "ev": "by 10 PM on the previous day", "kw": ["10 PM"]}
+{"q": "What happens if my wallet balance is too low for a subscription delivery?", "doc": "03_subscriptions", "ev": "the next delivery is skipped and the customer receives a reminder notification", "kw": ["skipped"]}
+{"q": "After how many skipped deliveries is a subscription paused?", "doc": "03_subscriptions", "ev": "After 3 consecutive skipped deliveries, the subscription is paused automatically", "kw": ["3"]}
+{"q": "Until when can I change my subscription quantity?", "doc": "03_subscriptions", "ev": "Quantity, frequency and items can be changed until 10 PM on the previous day", "kw": ["10 PM"]}
+{"q": "Am I charged for paused subscription days?", "doc": "03_subscriptions", "ev": "Paused days are not charged", "kw": ["not charged"]}
+{"q": "How long are subscription prices locked?", "doc": "03_subscriptions", "ev": "Subscription prices are locked for 30 days from the start date", "kw": ["30 days"]}
+{"q": "How much notice is given before a subscription price increase?", "doc": "03_subscriptions", "ev": "notified 7 days before any price increase", "kw": ["7 days"]}
+{"q": "What discount do subscribers get on milk and curd?", "doc": "03_subscriptions", "ev": "Subscribers receive a 5% discount on milk and curd", "kw": ["5%"]}
+{"q": "How much does FreshCart Plus cost per month?", "doc": "03_subscriptions", "ev": "costs Rs 149 per month or Rs 1,199 per year", "kw": ["149"]}
+{"q": "What is the annual price of FreshCart Plus?", "doc": "03_subscriptions", "ev": "costs Rs 149 per month or Rs 1,199 per year", "kw": ["1,199"]}
+{"q": "What cashback do Plus members get?", "doc": "03_subscriptions", "ev": "an extra 5% cashback in the wallet on every order", "kw": ["5%"]}
+{"q": "What happens to Plus benefits when I cancel?", "doc": "03_subscriptions", "ev": "benefits continue until the end of the paid period", "kw": ["end of the paid period"]}
+{"q": "Can I get a refund on the Plus monthly fee?", "doc": "03_subscriptions", "ev": "refundable only if cancelled within 48 hours of purchase and no benefit has been used", "kw": ["48 hours"]}
+{"q": "What happens to my wallet balance when I cancel a subscription?", "doc": "03_subscriptions", "ev": "Any unused wallet balance stays in the wallet", "kw": ["stays"]}
+{"q": "Does FreshCart Plus renew automatically?", "doc": "03_subscriptions", "ev": "The membership renews automatically and can be cancelled at any time", "kw": ["renews automatically"]}
+{"q": "Do Plus members get priority support?", "doc": "03_subscriptions", "ev": "and priority customer support", "kw": ["priority"]}
+{"q": "Which payment methods does FreshCart accept?", "doc": "04_payments_wallet", "ev": "FreshCart accepts UPI, credit and debit cards, net banking, the FreshCart Wallet and cash on delivery", "kw": ["UPI", "net banking"]}
+{"q": "What is the maximum order value for cash on delivery?", "doc": "04_payments_wallet", "ev": "Cash on delivery is available only for orders up to Rs 2,000", "kw": ["2,000"]}
+{"q": "Can I pay for a subscription with cash on delivery?", "doc": "04_payments_wallet", "ev": "is not available for subscriptions", "kw": ["not available"]}
+{"q": "What are the two kinds of wallet balance?", "doc": "04_payments_wallet", "ev": "Cash balance comes from money the customer adds and from refunds", "kw": ["cash", "promotional"]}
+{"q": "Does wallet cash balance expire?", "doc": "04_payments_wallet", "ev": "Cash balance never expires", "kw": ["never"]}
+{"q": "When does promotional balance expire?", "doc": "04_payments_wallet", "ev": "Promotional balance expires 90 days after it is credited", "kw": ["90 days"]}
+{"q": "How much of an order can be paid with promotional balance?", "doc": "04_payments_wallet", "ev": "At most 10% of an order's value can be paid with promotional balance", "kw": ["10%"]}
+{"q": "What is the maximum cash balance the wallet can hold?", "doc": "04_payments_wallet", "ev": "The maximum cash balance a wallet can hold is Rs 10,000", "kw": ["10,000"]}
+{"q": "What do I need to withdraw wallet cash to my bank?", "doc": "04_payments_wallet", "ev": "Customers with a completed KYC can withdraw cash balance", "kw": ["KYC"]}
+{"q": "How long do wallet withdrawals take?", "doc": "04_payments_wallet", "ev": "Withdrawals are processed within 3 business days", "kw": ["3 business days"]}
+{"q": "Can promotional balance be withdrawn?", "doc": "04_payments_wallet", "ev": "Promotional balance cannot be withdrawn", "kw": ["cannot"]}
+{"q": "How many free withdrawals do I get per month?", "doc": "04_payments_wallet", "ev": "Withdrawals are free up to twice a month", "kw": ["twice"]}
+{"q": "What is the fee for extra withdrawals?", "doc": "04_payments_wallet", "ev": "a fee of Rs 10 applies per withdrawal", "kw": ["10"]}
+{"q": "Money was debited but my order wasn't placed. When do I get it back?", "doc": "04_payments_wallet", "ev": "refunded to the original payment method automatically within 48 hours", "kw": ["48 hours"]}
+{"q": "Can a failed payment be credited to my wallet instantly?", "doc": "04_payments_wallet", "ev": "Customers can also ask support to credit it to the wallet instantly instead", "kw": ["instantly"]}
+{"q": "What reward do I get for referring a friend?", "doc": "04_payments_wallet", "ev": "both customers receive Rs 100 promotional balance", "kw": ["100"]}
+{"q": "What must a referred friend's first order be worth?", "doc": "04_payments_wallet", "ev": "completes their first order of Rs 300 or more", "kw": ["300"]}
+{"q": "How many friends can I earn referral rewards for?", "doc": "04_payments_wallet", "ev": "earn referral rewards for at most 10 friends", "kw": ["10"]}
+{"q": "How much shelf life do dairy products have at delivery?", "doc": "05_quality_guarantee", "ev": "delivered with at least 2 days of shelf life remaining", "kw": ["2 days"]}
+{"q": "What share of shelf life must packaged goods have left?", "doc": "05_quality_guarantee", "ev": "at least one third of their total shelf life remaining", "kw": ["one third"]}
+{"q": "At what temperature is milk stored?", "doc": "05_quality_guarantee", "ev": "Milk is stored at 4 degrees Celsius or below", "kw": ["4 degrees"]}
+{"q": "How is milk kept cold during delivery?", "doc": "05_quality_guarantee", "ev": "travel in insulated crates with ice packs", "kw": ["ice packs"]}
+{"q": "How long can a morning delivery route take?", "doc": "05_quality_guarantee", "ev": "complete a morning route within 150 minutes of leaving the hub", "kw": ["150 minutes"]}
+{"q": "How far are partner farms from city hubs?", "doc": "05_quality_guarantee", "ev": "partner farms within 150 km of each city hub", "kw": ["150 km"]}
+{"q": "What is each milk batch tested for?", "doc": "05_quality_guarantee", "ev": "tested for adulterants, antibiotics and fat content", "kw": ["adulterants", "antibiotics"]}
+{"q": "How can a milk problem be traced back to the farm?", "doc": "05_quality_guarantee", "ev": "Batch numbers are printed on every pouch", "kw": ["batch"]}
+{"q": "Can I get a replacement for spoiled milk?", "doc": "05_quality_guarantee", "ev": "offers a free replacement in the next morning slot", "kw": ["free replacement"]}
+{"q": "What is the food safety helpline number?", "doc": "05_quality_guarantee", "ev": "share the food safety helpline: 1800-123-9999", "kw": ["1800-123-9999"]}
+{"q": "Can support agents give medical advice about food illness?", "doc": "05_quality_guarantee", "ev": "Support agents must not offer medical advice", "kw": ["must not"]}
+{"q": "Who handles complaints about illness linked to a product?", "doc": "05_quality_guarantee", "ev": "escalated immediately to the Quality team", "kw": ["Quality team"]}
+{"q": "How do I sign in to FreshCart?", "doc": "06_account_privacy", "ev": "sign in with a one-time password sent to their registered mobile number", "kw": ["one-time password"]}
+{"q": "Will FreshCart support ever ask for my OTP?", "doc": "06_account_privacy", "ev": "FreshCart support will never ask for the OTP, card number, CVV or UPI PIN", "kw": ["never"]}
+{"q": "How do I change my registered mobile number?", "doc": "06_account_privacy", "ev": "after verifying an OTP on both the old and new numbers", "kw": ["old and new"]}
+{"q": "If I change my address after 10 PM, when does it apply?", "doc": "06_account_privacy", "ev": "changes to an address made after 10 PM apply from the delivery after next", "kw": ["delivery after next"]}
+{"q": "Does FreshCart store my full card number?", "doc": "06_account_privacy", "ev": "Full card numbers are never stored by FreshCart; they are tokenised by the payment gateway", "kw": ["tokenised"]}
+{"q": "How long are invoice records kept?", "doc": "06_account_privacy", "ev": "Order and invoice records are kept for 8 years", "kw": ["8 years"]}
+{"q": "How long are support chat transcripts retained?", "doc": "06_account_privacy", "ev": "Chat transcripts with support are kept for 1 year", "kw": ["1 year"]}
+{"q": "Is my location stored after delivery?", "doc": "06_account_privacy", "ev": "is not stored after the order is completed", "kw": ["not stored"]}
+{"q": "How long does account deletion take?", "doc": "06_account_privacy", "ev": "Deletion is completed within 30 days", "kw": ["30 days"]}
+{"q": "What happens to my promotional balance if I delete my account?", "doc": "06_account_privacy", "ev": "Promotional balance is forfeited", "kw": ["forfeited"]}
+{"q": "Can a support agent see another customer's orders?", "doc": "06_account_privacy", "ev": "must not reveal one customer's information to another customer", "kw": ["must not"]}

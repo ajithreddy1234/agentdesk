@@ -1,0 +1,8 @@
+__pycache__/
+*.db
+.env
+eval/results/
+eval/scenarios.json
+.pytest_cache/
+.env.*
+!.env.example
