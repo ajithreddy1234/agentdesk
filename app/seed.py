@@ -33,9 +33,13 @@ CITIES = ["Hyderabad", "Bengaluru", "Mumbai", "Delhi NCR", "Chennai", "Pune"]
 def seed(url: str | None = None, n_customers: int = 60, seed_value: int = 7) -> None:
     rng = random.Random(seed_value)
     now = settings.now()
+    from .db import init_db
+    from .sql_lookup import drop_views
+
     eng = get_engine(url)
+    drop_views(eng)  # the agent's read views depend on the tables
     Base.metadata.drop_all(eng)
-    Base.metadata.create_all(eng)
+    init_db(url)
     S = session_factory(url)
     with S.begin() as s:
         prods = [Product(id=i, name=n, category=c, price=p, perishable=per) for i, (n, c, p, per) in enumerate(PRODUCTS, 1)]
