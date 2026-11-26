@@ -15,7 +15,7 @@ from fastapi import Depends, FastAPI, Header, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
-from .agent import build_graph, langfuse_callbacks, llm_configured, make_checkpointer, make_llm
+from .agent import build_graph, llm_configured, make_checkpointer, make_llm
 from .auth import check_customer_login, check_supervisor_login, issue, require_customer, require_supervisor
 from .config import settings
 from .db import Customer, init_db
@@ -44,7 +44,7 @@ orders = OrderService()
 def runtime() -> AgentRuntime:
     if "runtime" not in state:
         try:
-            state["runtime"] = AgentRuntime(build_graph(make_llm(), make_checkpointer()), langfuse_callbacks())
+            state["runtime"] = AgentRuntime(build_graph(make_llm(), make_checkpointer()))
         except RuntimeError as e:  # no API key yet
             raise HTTPException(503, str(e)) from e
     return state["runtime"]

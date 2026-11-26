@@ -8,6 +8,8 @@ from datetime import datetime
 @dataclass
 class Settings:
     database_url: str = os.getenv("DATABASE_URL", "sqlite:///./agentdesk.db")
+    # read-only, customer-scoped connection for the agent's SQL lookups (app/sql_lookup.py)
+    readonly_database_url: str | None = os.getenv("READONLY_DATABASE_URL") or None
     redis_url: str | None = os.getenv("REDIS_URL")  # None -> in-process memory store
     checkpoint_url: str | None = os.getenv("CHECKPOINT_URL")  # postgres URL for LangGraph checkpoints
     vector_backend: str = os.getenv("VECTOR_BACKEND", "memory")  # "pgvector" in production

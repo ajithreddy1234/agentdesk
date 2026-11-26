@@ -1,5 +1,9 @@
 """Agent tools. Arguments are validated by Pydantic schemas; the customer id is injected from the
-authenticated session (RunnableConfig), so the model never supplies or sees other customers' ids."""
+authenticated session (RunnableConfig), so the model never supplies or sees other customers' ids.
+
+Reads (list_orders, get_order_details, search_orders) are SQL over customer-scoped views through a
+read-only connection (app/sql_lookup.py). Actions (cancel, refund, tickets) go through the order/refund
+REST API, which owns the business rules."""
 from __future__ import annotations
 
 import json
@@ -15,6 +19,7 @@ from ..memory import ALLOWED_KEYS, get_memory
 from ..order_client import make_client
 from ..orders import OrderError
 from ..policies import get_policy_store
+from ..sql_lookup import get_reader
 
 _client = None
 
@@ -54,7 +59,7 @@ class ListOrdersArgs(BaseModel):
 @tool(args_schema=ListOrdersArgs)
 def list_orders(status: str | None = None, limit: int = 10, config: RunnableConfig = None) -> str:
     """List the signed-in customer's recent orders (newest first) with status, total and delivery time."""
-    return _ok(client().list_orders(_cid(config), status, limit))
+    return _ok(get_reader().list_orders(_cid(config), status, limit))
 
 
 class OrderIdArgs(BaseModel):
@@ -64,10 +69,25 @@ class OrderIdArgs(BaseModel):
 @tool(args_schema=OrderIdArgs)
 def get_order_details(order_id: int, config: RunnableConfig = None) -> str:
     """Get one order's items (product_id, name, qty, price, perishable), delivery time and existing refunds."""
-    try:
-        return _ok(client().order_details(_cid(config), order_id))
-    except OrderError as e:
-        return _err(e)
+    d = get_reader().order_details(_cid(config), order_id)
+    if d is None:  # same answer whether it doesn't exist or belongs to someone else
+        return _ok({"error": "not_found", "message": f"Order {order_id} was not found on this account."})
+    return _ok(d)
+
+
+class SearchOrdersArgs(BaseModel):
+    product: str | None = Field(None, min_length=2, max_length=60, description="Product name fragment, e.g. 'paneer'")
+    status: Literal["placed", "out_for_delivery", "delivered", "cancelled"] | None = None
+    within_days: conint(ge=1, le=365) | None = Field(None, description="Only orders placed in the last N days")
+    limit: conint(ge=1, le=25) = 10
+
+
+@tool(args_schema=SearchOrdersArgs)
+def search_orders(product: str | None = None, status: str | None = None, within_days: int | None = None,
+                  limit: int = 10, config: RunnableConfig = None) -> str:
+    """Find the customer's orders by product name, status and/or how recent they are, when they describe an
+    order ("the paneer I got last week") instead of giving its number. Returns orders with the matching items."""
+    return _ok(get_reader().search_orders(_cid(config), product, status, within_days, limit))
 
 
 class CancelArgs(OrderIdArgs):
@@ -161,6 +181,6 @@ def remember_preference(key: str, value: str, config: RunnableConfig = None) -> 
     return _ok({"saved": get_memory().set(_cid(config), key, value)})
 
 
-ALL_TOOLS = [list_orders, get_order_details, cancel_order, request_refund, search_policies, web_search,
+ALL_TOOLS = [list_orders, get_order_details, search_orders, cancel_order, request_refund, search_policies, web_search,
              escalate_to_human, remember_preference]
 TOOLS_BY_NAME = {t.name: t for t in ALL_TOOLS}

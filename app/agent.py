@@ -38,8 +38,11 @@ Saved preferences (long-term memory): {memory}
 {summary}
 How to work:
 - Use tools for every fact about orders, refunds or policies. Never guess order numbers, items, amounts or rules.
-- If the customer doesn't give an order number, call list_orders and pick the order that matches their description
-  (for example the latest delivered order). Ask only when two or more orders genuinely match.
+- If the customer doesn't give an order number: use search_orders when they name a product or a time ("the paneer
+  from last week"), otherwise list_orders, and pick the order that matches (for example the latest delivered order).
+- If the request is ambiguous (no product named and several orders could match, or it is unclear what went wrong
+  or what they want), ask one short clarifying question and take no action until they answer. Never guess which
+  items or order to refund or cancel.
 - Before a refund, call get_order_details to get product_ids and quantities, then call request_refund.
   The system calculates the amount; tell the customer the exact amount and timeline it returns.
 - Pick the refund reason from what the customer said (damaged, spoiled, expired, leaking, wrong_item, missing,
@@ -209,8 +212,9 @@ def make_llm(model: str | None = None, temperature: float = 0):
 
     if not llm_configured():
         raise RuntimeError("No LLM API key configured. Set OPENROUTER_API_KEY in .env and restart.")
+    extra = {"usage": {"include": True}} if "openrouter.ai" in settings.llm_base_url else None  # cost per call
     return ChatOpenAI(model=model or settings.llm_model, base_url=settings.llm_base_url, api_key=settings.llm_api_key,
-                      temperature=temperature, timeout=60, max_retries=2)
+                      temperature=temperature, timeout=60, max_retries=2, extra_body=extra)
 
 
 def make_checkpointer():
@@ -225,14 +229,3 @@ def make_checkpointer():
     from langgraph.checkpoint.memory import InMemorySaver
 
     return InMemorySaver()
-
-
-def langfuse_callbacks() -> list:
-    import os
-
-    pk, sk = os.getenv("LANGFUSE_PUBLIC_KEY", ""), os.getenv("LANGFUSE_SECRET_KEY", "")
-    if pk and sk and not pk.endswith("...") and not sk.endswith("..."):
-        from langfuse.langchain import CallbackHandler
-
-        return [CallbackHandler()]
-    return []

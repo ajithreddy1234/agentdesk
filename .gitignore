@@ -6,3 +6,4 @@ eval/scenarios.json
 .pytest_cache/
 .env.*
 !.env.example
+.demo-v2-seeded

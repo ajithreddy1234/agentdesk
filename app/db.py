@@ -142,3 +142,6 @@ def init_db(url: str | None = None):
     if "quote_id" not in cols:
         with eng.begin() as c:
             c.execute(text("ALTER TABLE approvals ADD COLUMN quote_id VARCHAR(32)"))
+    from .sql_lookup import install
+
+    install(eng)  # customer-scoped views + read-only role for the agent's SQL lookups

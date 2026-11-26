@@ -17,6 +17,8 @@ services:
       REDIS_URL: redis://redis:6379/0
       VECTOR_BACKEND: pgvector
       SERVICE_BASE_URL: http://localhost:8000
+      READONLY_DATABASE_URL: postgresql+psycopg2://agentdesk_reader:${READER_DB_PASSWORD:-agentdesk_reader}@db:5432/agentdesk
+      READER_DB_PASSWORD: ${READER_DB_PASSWORD:-agentdesk_reader}
     ports: ["8003:8000"]
     depends_on: {db: {condition: service_healthy}, redis: {condition: service_started}}
 volumes:
